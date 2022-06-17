@@ -1,10 +1,15 @@
+import Head from "next/head";
 import "../styles/globals.css";
 import Layout from "../components/layout/layout";
 
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-      {/* All Page Content, that's why we used spread operator */}
+      <Head>
+        <title>Next Events</title>
+        <meta name="description" content="Next JS Events" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Component {...pageProps} />;
     </Layout>
   );
