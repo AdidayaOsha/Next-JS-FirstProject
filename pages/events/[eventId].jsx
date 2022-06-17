@@ -3,7 +3,7 @@ import { getEventById, getFeaturedEvents } from "../../helpers/api-util";
 import EventSummary from "../../components/event-detail/event-summary";
 import EventLogistics from "../../components/event-detail/event-logistics";
 import EventContent from "../../components/event-detail/event-content";
-import ErrorAlert from "../../components/ui/error-alert";
+import Head from "next/head";
 
 function EventDetailPage(props) {
   const { selectedEvents } = props;
@@ -18,6 +18,10 @@ function EventDetailPage(props) {
 
   return (
     <Fragment>
+      <Head>
+        <title>{selectedEvents.title}</title>
+        <meta name="description" content={selectedEvents.description} />
+      </Head>
       <EventSummary title={selectedEvents.title} />
       <EventLogistics
         date={selectedEvents.date}
